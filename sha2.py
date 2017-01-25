@@ -127,16 +127,6 @@ def addBin(x,y):
         l = bin2dec(result.zfill(maxlen))
         l %= 2**32
         return dec2bin(l)
-    
-def fonctions(t, x, y, z):
-    if(0<=t and t<=19):
-        return binOr(binAnd(x, y), binAnd(binComplement(x), z))
-    elif(20<=t and t<=39):
-        return binXor(binXor(x, y), z)
-    elif(40<=t and t<=59):
-        return binOr(binOr(binAnd(x, y), binAnd(x, z)), binAnd(y, z))
-    elif(60<=t and t<=79):
-        return binXor(binXor(x, y), z)
  
 def txt2bin(text):
     bits = bin(int(binascii.hexlify(text.encode('utf-8', 'surrogatepass')), 16))[2:]
